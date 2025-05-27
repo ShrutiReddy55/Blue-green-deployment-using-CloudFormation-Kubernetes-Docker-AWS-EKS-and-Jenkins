@@ -198,8 +198,11 @@ pipeline {
 
   }
   post {
-    failure {
-      sh 'bash ./bash-scripts/clearDockerImages.sh'
+  failure {
+    node {
+      sh 'your-failure-command.sh'
     }
   }
+}
+
 }
